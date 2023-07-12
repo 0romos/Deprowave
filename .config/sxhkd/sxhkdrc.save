@@ -1,0 +1,158 @@
+
+##---------- Keybindings for bspwm ----------##
+
+# Terminal (alacritty)
+alt + t
+	alacritty --config-file ~/.config/bspwm/alacritty/alacritty.yml	
+alt + d
+	discord --multi-instance
+alt + f
+	firefox
+
+alt + s
+super + e
+	nautilus
+
+
+super + {_,shift + } { Left, Down, Up, Right }
+        bspc node -{f,s} {west,south,north,east}
+        	
+##---------- Rofi Launcher & Menus ----------##
+
+# Rofi App Launcher
+alt + space
+	sh ~/.config/bspwm/rofi/bin/launcher
+
+# Theme Selector
+super + alt + space
+	sh ~/.config/bspwm/bin/themechanger.sh
+
+#super + n
+#	nmd
+
+
+# Rofi Menus/Applets
+#super + {w,m,x,r,s}
+#	sh ~/.config/bspwm/rofi/bin/{windows,mpd,powermenu,asroot,screenshot}
+
+##---------- Applications ----------##
+
+# Launch Apps
+# super + shift + {f,w,e}
+# 	{thunar,firefox,geany}
+
+# Lockscreen
+#ctrl + alt + l
+#    betterlockscreen --lock
+
+##---------- System Keys ----------##
+
+# Take a screenshot
+super + 0
+	flameshot gui
+	
+# Brighness control
+XF86MonBrightnessUp
+	xbacklight -inc 5
+
+XF86MonBrightnessDown
+	xbacklight -dec 5
+	
+# Volume control
+XF86AudioRaiseVolume
+	amixer -q set Master 5%+ unmute
+
+XF86AudioLowerVolume
+	amixer -q set Master 5%- unmute
+
+XF86AudioMute
+	amixer -D pulse sset Master toggle-mute
+	
+# Music control
+XF86Audio{Next,Prev,Play,Stop}
+	mpc {next,prev,toggle,stop}
+
+##---------- Bspwm ----------##
+
+# Close App
+alt + z
+	bspc node -{c,k}
+
+# Reload Keybindings
+super + Escape
+	pkill -USR1 -x sxhkd
+
+# Quit/Restart bspwm
+super + alt + {q,r}
+	bspc {quit,wm -r}
+	
+# Split horizontal, vertical or cancel
+super + {h,v,q}
+	bspc node -p {east,south,cancel}
+
+# Preselect the ratio
+super + ctrl + {1-9}
+	bspc node -o 0.{1-9}
+#######################################################################
+super + {t,shift + t,s,f}
+	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+
+# Fullscreen or Monocle
+#super + f
+#    bspc node -t "~"fullscreen
+################################################################
+# Toggle beetwen floating & tiled
+#super + s
+#    bspc node -t "~"{floating,tiled}
+
+# Pseudo Tiled & tiled mode
+#super + t
+#    bspc node -t "~"tiled
+
+#super + {_,shift + }
+#    bspc node -t "~"{pseduo_tiled}
+
+
+# Send the window to another edge of the screen
+super + {_,shift + }{Left,Down,Up,Right}
+	bspc node -{f,s} {west,south,north,east}
+
+# Change focus to next window, including floating window
+alt + {_,shift + }Tab
+	bspc node -f {next.local,prev.local}
+
+# Switch workspace
+#alt + {Left,Right}
+#	bspc desktop -f {prev.local,next.local}
+
+# Switch to last opened workspace
+#super + {Tab,grave}
+#	bspc {node,desktop} -f last
+
+alt + {1-8}
+	bspc desktop -f '^{1-9,10}'
+
+# Send focused window to another workspace
+#super + {_,shift + }{1-8}
+	#bspc {desktop -f,node -d} '^{1-8}'
+
+# Expanding windows
+super + control + {Left,Right,Up,Down}
+	bspc node -z {left -20 0,right 20 0,top 0 -20,bottom 0 20}
+	
+## Shrinking windows
+super + alt + {Left,Right,Up,Down}
+	bspc node -z {left 20 0,right -20 0,top 0 20,bottom 0 -20}
+	
+## Move floating windows
+alt + shift + {Left,Down,Up,Right}
+	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+
+#~button3
+	#bspc query -D -d .focused.!occupied && echo -e "$(cat ~/.config/jgmenu/menu.txt)" | jgmenu --simple
+	
+
+##---------- EOF ----------##
+
+

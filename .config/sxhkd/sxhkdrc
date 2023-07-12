@@ -1,0 +1,120 @@
+##----------- Rofi Menus ----------##
+
+## Rofi App Launcher
+alt + space
+	sh ~/.config/bspwm/rofi/bin/launcher
+
+## Rofi Screenshot Menu
+super + 0
+	~/.config/bspwm/rofi/bin/screenshot
+
+## Rofi Theme Menu
+alt + s				
+	~/.scripts/themer
+	
+## Theme Selector
+super + shift + s
+	python3 $HOME/.scripts/cp.py
+
+## Rofi Power Menu
+super + Escape
+	bash ~/.config/bspwm/rofi/bin/powermenu 
+
+
+
+
+##---------- Applications ---------##
+
+## Launch Applications
+alt + {t,d,f,m,c}
+	{alacritty --config-file ~/.config/bspwm/alacritty/alacritty.yml,discord,firefox,cd ~/Music && alacritty --config-file ~/.config/bspwm/alacritty/alacritty.yml -e cmus,$HOME/Documents/AppImages/Cutter*.AppImage}
+
+## File manager
+super + e
+	nautilus
+
+## Ranger File manager
+super + w
+	alacritty --config-file ~/.config/bspwm/alacritty/alacritty.yml -e ranger
+
+
+
+
+##---------- System Keys ----------##
+
+## Increase Brightness
+XF86MonBrightnessUp
+	xbacklight -inc 5
+
+## Decrease Brightness
+XF86MonBrightnessDown
+	xbacklight -dec 5
+	
+## Increase Audio
+XF86AudioRaiseVolume
+	amixer -q set Master 5%+ unmute
+
+## Lower Audio
+XF86AudioLowerVolume
+	amixer -q set Master 5%- unmute
+
+## Mute Audio
+XF86AudioMute
+	amixer -D pulse sset Master toggle-mute
+	
+## Music control
+XF86Audio{Next,Prev,Play,Stop}
+	mpc {next,prev,toggle,stop}
+
+
+
+
+##------------- Bspwm -------------##
+
+## Close App
+alt + z
+	bspc node -{c,k}
+
+## Quit/Restart bspwm
+super + alt + {q,r}
+	bspc {quit,wm -r}
+	
+## Split horizontal, vertical or cancel
+super + {h,v,q}
+	bspc node -p {east,south,cancel}
+
+## Preselect the ratio
+super + ctrl + {1-9}
+	bspc node -o 0.{1-9}
+
+## Tiling
+super + {t,shift + t,s,f}
+	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+
+## Send the window to another edge of the screen
+super + {_,shift + }{Left,Down,Up,Right}
+	bspc node -{f,s} {west,south,north,east}
+
+## Switch workspaces
+alt + {1-9}
+	bspc desktop -f '^{1-9,10}'
+
+## Send focused window to another workspace
+super + {_,shift + }{1-8}
+	bspc {desktop -f,node -d} '^{1-8}'
+
+## Expanding windows
+super + control + {Left,Right,Up,Down}
+	bspc node -z {left -20 0,right 20 0,top 0 -20,bottom 0 20}
+	
+## Shrinking windows
+super + alt + {Left,Right,Up,Down}
+	bspc node -z {left 20 0,right -20 0,top 0 20,bottom 0 -20}
+	
+## Move floating windows
+alt + shift + {Left,Down,Up,Right}
+	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+## Move windows Position
+super + {_,shift + } { Left, Down, Up, Right }
+        bspc node -{f,s} {west,south,north,east}

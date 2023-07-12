@@ -1,0 +1,11 @@
+* {
+	background:			#0e0e0e;
+	background-alt:		#202020;
+	brdr:               #202020;
+    foreground:			#eeeeee;
+    foresel:            #eeeeee;
+    selected:			#202020;
+	urgent:				#E06C75;
+	on:					#87A181;
+	off:				#D88B9F;
+}

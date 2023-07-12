@@ -1,0 +1,26 @@
+{
+    "wallpaper": "/home/xor/.config/bspwm/wall.png",
+    "alpha": "100",
+    "special": {
+        "background": "#0f0d16",
+        "cursor": "#d8d4da"
+    },
+    "colors": {
+        "color0": "#0f0d16",
+        "color1": "#6B687B",
+        "color2": "#767184",
+        "color3": "#847C90",
+        "color4": "#998CA3",
+        "color5": "#A398AB",
+        "color6": "#BDB4C2",
+        "color7": "#d8d4da",
+        "color8": "#979498",
+        "color9": "#6B687B",
+        "color10": "#767184",
+        "color11": "#847C90",
+        "color12": "#998CA3",
+        "color13": "#A398AB",
+        "color14": "#BDB4C2",
+        "color15": "#d8d4da"
+    }
+}

@@ -1,0 +1,70 @@
+#!/usr/bin/env bash
+
+## Copyright (C) 2020-2022 Aditya Shakya <adi1090x@gmail.com>
+## Everyone is permitted to copy and distribute copies of this file under GNU-GPL3
+
+DIR="$HOME/.config/bspwm"
+rofi_command="rofi -theme $DIR/rofi/themes/screenshot.rasi"
+
+time=`date +%Y-%m-%d-%H-%M-%S`
+geometry=`xrandr | head -n1 | cut -d',' -f2 | tr -d '[:blank:],current'`
+dir="`xdg-user-dir PICTURES`/Screenshots"
+file="Screenshot_${time}_${geometry}.png"
+
+# Buttons
+screen=""
+area=""
+window=""
+record=""
+stoprec=""
+
+# take shots
+screensh () {
+	sleep 0.5s
+	flameshot screen -c
+}
+
+screenar () {
+	sleep 0.5s
+        flameshot gui -c
+}
+
+screenaf () {
+	flameshot screen -c -d 5000
+}
+
+screenrc () {
+	sleep 0.5s
+	recbin
+}
+
+
+stoprec () {
+	killall ffmpeg
+}
+if [[ ! -d "$dir" ]]; then
+	mkdir -p "$dir"
+fi
+
+# Variable passed to rofi
+options="$screen\n$area\n$window\n$record\n$stoprec"
+
+chosen="$(echo -e "$options" | $rofi_command -p 'Graphic Utility' -dmenu -selected-row 0)"
+case $chosen in
+    $screen)
+		screensh
+        ;;
+    $area)
+		screenar
+        ;;
+    $window)
+		screenaf
+	;;
+    $record)
+                screenrc
+        ;;
+
+    $stoprec)
+                stoprec
+        ;;
+esac

@@ -1,0 +1,47 @@
+#! /bin/sh
+wmname LG3D &
+pgrep -x sxhkd > /dev/null || sxhkd &
+killall -9 sxhkd ksuperkey
+killall -q picom
+killall -9 dunst
+killall -9 bspborder
+killall polybar
+killall bspborder
+
+picom &
+sxhkd &
+# polybar &
+/usr/bin/dunst &
+bspc monitor -d I II III IV V VI VII VIII IX X
+
+
+bspc config border_width         2
+bspc config window_gap          10
+bspc config split_ratio          0.50
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+bspc config pointer_follows_focus false
+bspc config focus_follows_pointer true
+bspc rule -a Kupfer.py focus=on
+bspc rule -a Screenkey manage=off
+bspc rule -a Thunar state=tiled
+
+bspc config focused_border_color        "#202020"
+bspc config normal_border_color         "#202020"
+bspc config active_border_color         "#202020"
+ksuperkey -e 'Super_L=Alt_L|F1' &
+ksuperkey -e 'Super_R=Alt_L|F1' &
+
+xrandr --output `xrandr | grep " connected"|cut -f1 -d" "`  --mode 1920x1080
+
+xsetroot -cursor_name left_ptr &
+feh --bg-fill --zoom centered ~/.config/bspwm/wall.png
+
+#$HOME/.config/bspwm/bar/launch.sh &
+polybar -c ~/.config/polybar/config.ini main
+sleep 3s
+xdo lower -N "Polybar"
+xdo above -N "Polybar" -t $(xdo id -N Bspwm -n root)
+#kill $(pgrep -f pentesting.py)
+#$HOME/.config/bspwm/bin/rpc &
+# python3 $HOME/.config/bspwm/bin/pentesting.py &

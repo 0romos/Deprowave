@@ -1,0 +1,170 @@
+/* Copyright (C) 2020-2022 Aditya Shakya <adi1090x@gmail.com> */
+/* Everyone is permitted to copy and distribute copies of this file under GNU-GPL3 */
+
+configuration {
+    font:                           "JetBrains Mono Nerd Font 10";
+    show-icons:                     false;
+    display-drun: 					"";
+    drun-display-format:            "{icon} {name}";
+    disable-history:                false;
+	click-to-exit: 					true;
+}
+
+@import "new_colors.rasi"
+
+window {
+    font:                           "JetBrains Mono Nerd Font 10";
+    transparency:                   "real";
+    background-color:               @background;
+    text-color:                     @foreground;
+    border:                  		1px;
+    border-color:                  	@brdr;
+    border-radius:                  0px;
+    width:                          400px;
+    height:                         420px;
+    location:                       center;
+    anchor:                         center;
+    x-offset:                       0;
+    y-offset:                       0;
+}
+
+prompt {
+    font:                           "JetBrains Mono Nerd Font 10";
+    enabled: 						true;
+	margin: 						0px 0px 0px 8px;
+    padding:    					6px 0px 6px 0px;
+	background-color: 				@background;
+	text-color: 					@foreground;
+    border:                  		0px 0px 0px 0px;
+    border-color:                  	@selected;
+    border-radius:                  0px;
+}
+
+textbox-prompt-colon {
+    font:                           "JetBrains Mono Nerd Font 10";
+	expand: 						false;
+	str: 							"直";
+    border-radius:                  8px;
+    background-color:               @background-alt;
+    text-color:                     @foreground;
+    padding:    					6px 10px 6px 10px;
+	font:							"Iosevka Nerd Font 10";
+}
+
+entry {
+    font:                           "JetBrains Mono Nerd Font 10";
+    background-color:               @background;
+    text-color:                     @foreground;
+    placeholder-color:              @foreground;
+    placeholder:                    "";
+    expand:                         true;
+    horizontal-align:               0;
+    blink:                          false;
+    padding:                        6px;
+}
+
+inputbar {
+    font:                           "JetBrains Mono Nerd Font 10";
+	children: 						[ textbox-prompt-colon, prompt, entry ];
+    spacing:                        0;
+    background-color:               @background;
+    text-color:                     @foreground;
+    border:                  		0px;
+    border-radius:                  0px;
+    border-color:                  	@selected;
+    expand:                         false;
+    margin:                         0px 0px 0px 0px;
+    padding:                        0px;
+    position:                       center;
+}
+
+case-indicator {
+    font:                           "JetBrains Mono Nerd Font 10";
+    background-color:               @background;
+    text-color:                     @foreground;
+    spacing:                        0;
+}
+
+
+listview {
+    font:                           "JetBrains Mono Nerd Font 10";
+    background-color:               @background;
+    columns:                        1;
+    lines:							8;
+    spacing:                        4px;
+    cycle:                          true;
+    dynamic:                        true;
+    layout:                         vertical;
+}
+
+mainbox {
+    font:                           "JetBrains Mono Nerd Font 10";
+    background-color:               @background;
+    children:                       [ inputbar, listview ];
+    spacing:                       	10px;
+    padding:                        20px;
+}
+
+element {
+    font:                           "JetBrains Mono Nerd Font 10";
+    background-color:               @background;
+    text-color:                     @foreground;
+    orientation:                    horizontal;
+    border-radius:                  0px;
+    padding:                        6px;
+}
+
+element-icon {
+    font:                           "JetBrains Mono Nerd Font 10";
+    background-color: 				inherit;
+    text-color:       				inherit;
+    horizontal-align:               0.5;
+    vertical-align:                 0.5;
+    size:                           0px;
+    border:                         0px;
+}
+
+element-text {
+    font:                           "JetBrains Mono Nerd Font 10";
+    background-color: 				inherit;
+    text-color:       				inherit;
+    expand:                         true;
+    horizontal-align:               0;
+    vertical-align:                 0.5;
+    margin:                         2px 0px 2px 2px;
+}
+
+element selected {
+    font:                           "JetBrains Mono Nerd Font 10";
+    background-color:               @selected;
+    text-color:                     @foreground;
+    border:                  		0px;
+    border-radius:                  8px;
+    border-color:                  	@selected;
+}
+
+element.active,
+element.selected.urgent {
+    font:                           "JetBrains Mono Nerd Font 10";
+  background-color: @on;
+  text-color: @background;
+  border-color: @on;
+}
+
+element.selected.urgent {
+    font:                           "JetBrains Mono Nerd Font 10";
+  border-color: @selected;
+}
+
+element.urgent,
+element.selected.active {
+    font:                           "JetBrains Mono Nerd Font 10";
+  background-color: @off;
+  text-color: @background;
+  border-color: @off;
+}
+
+element.selected.active {
+    font:                           "JetBrains Mono Nerd Font 10";
+  border-color: @selected;
+}

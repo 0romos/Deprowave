@@ -1,0 +1,47 @@
+#! /bin/sh
+
+DIR="$HOME/.config/bspwm"
+rofi_command="rofi -theme $DIR/rofi/themes/launcher.rasi"
+chosen=$(printf "Roommal\nPurpmal\nGreenmal\nBluemal\nSeamal" | $rofi_command -p 'Theme Switcher' -dmenu -selected-row 0)
+
+room () {
+	sleep 0.5s
+	feh --bg-scale --zoom fill ~/Pictures/wallpapers/0012.jpg
+}
+
+purpmal () {
+	sleep 0.5s
+	cd /home/gast/.local/share/local_themes/purpmal/ && cp -r * ~/.config/
+    cp -r /home/gast/.local/share/local_themes/purpmal/app.css /home/gast/Documents/Bento/
+    bspc wm -r
+}
+
+greenmal () {
+	sleep 0.5s
+    cd /home/gast/.local/share/local_themes/greenmal/ && cp -r * ~/.config/
+    cp -r /home/gast/.local/share/local_themes/greenmal/app.css /home/gast/Documents/Bento/
+    bspc wm -r
+}
+
+bluemal () {
+	sleep 0.5s
+    cd /home/gast/.local/share/local_themes/bluemal/ && cp -r * ~/.config/
+    cp -r /home/gast/.local/share/local_themes/bluemal/app.css /home/gast/Documents/Bento/
+    bspc wm -r
+}
+
+seamal () {
+	sleep 0.5s
+    cd /home/gast/.local/share/local_themes/seamal/ && cp -r * ~/.config/
+    cp -r /home/gast/.local/share/local_themes/seamal/app.css /home/gast/Documents/Bento/
+	bspc wm -r
+}
+
+case "$chosen" in
+	"Roommal") room;;
+	"Purpmal") purpmal;;
+	"Greenmal") greenmal;;
+	"Bluemal") bluemal;;
+	"Seamal") seamal;;
+	*) exit 1 ;;
+esac

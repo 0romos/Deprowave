@@ -1,0 +1,15 @@
+{
+    "autosave": 1,
+    "autosu": true,
+    "colorscheme": "catppuccin-mocha",
+    "discordrpc": true,
+    "divchars": "  ",
+    "filemanager-compressparent": true,
+    "filemanager-foldersfirst": true,
+    "filemanager-showdotfiles": false,
+    "infobar": false,
+    "keepautoindent": true,
+    "multiopen": true,
+    "status": false,
+    "statusline": false
+}
