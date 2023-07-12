@@ -69,7 +69,7 @@ A minimal dark Pop OS based rice
     
       You need to open Alacritty and execute `cd .mozilla/firefox/` then you can list the files by doing `ls`.
       After that you have to find the folder that has `.default-release` at the end of it and then cd inside it.
-      If youre inside the profile Directory you can now execute `mkdir chrome && cd chrome` after that you can move the files from the [Firefox Files](https://github.com/0romos/Deprowave/tree/main/firefox) inside the chrome folder! When you're done close Firefox using ctrl + q!<br />
+      If youre inside the profile Directory you can now execute `mkdir chrome && cd chrome` after that you can move the files from the [Firefox Files](https://github.com/0romos/Deprowave/tree/main/Firefox) inside the chrome folder! When you're done close Firefox using ctrl + q!<br />
    
 <center> <h1 align="left" >Contributing</h1> </center>
 
