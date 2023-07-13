@@ -609,10 +609,6 @@ blockquote {
     background-color: var(--text-link);
 }
 
-.pictureInPictureWindow-3ms5Zy {
-    display: none;
-}
-
 .groupStart-3Mlgv1::before {
     transform: translate(-20%, -156%);
 }
