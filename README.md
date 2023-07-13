@@ -16,12 +16,28 @@ A minimal dark Pop OS based rice
 
 <center> <p align="left" >Deprowave is a minimalist Pop OS rice that boasts lightning-fast performance and a clean, uncluttered interface designed to enhance productivity and streamline workflow. With bspwm as its window manager and sxhkd for binds, PurpMal delivers an intuitive user experience that is both efficient and customizable. Remarkably, this rice is capable of running smoothly on a mere 1GB of RAM, even with all applications open. PurpMal is an ideal choice for professionals seeking a fast and minimalistic operating system that can handle daily use with ease. </p></center
 
-<center> <h1 align="left" id="keybinds">Keybinds</h1> </center>
+<center> <h1 align="left" id="about">About</h1> </center>
 
+1. Telegram Theme
+
+    [Install](https://t.me/addtheme/o00r1CSZLibLjA7i)
+
+
+2. Discord Theme
+
+    [Theme.css](https://github.com/0romos/Deprowave/blob/main/Discord/Theme.css)
+
+3. Bento Theme
+
+    [App.css](https://github.com/0romos/Deprowave/blob/main/Bento/app.css)
+
+
+<center> <h1 align="left" id="keybinds">Keybinds</h1> </center>
 
 1. Applications
 
    ```
+   LAlt + E = Emoji Picker
    LAlt + T = Alacritty
    LAlt + S = Theme Changer
    LAlt + SPACE = Rofi
