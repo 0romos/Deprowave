@@ -1,0 +1,25 @@
+#! /bin/sh
+
+DIR="$HOME/.config/bspwm"
+rofi_command="rofi -theme $DIR/rofi/themes/launcher.rasi"
+chosen=$(printf "Lotus\nMono" | $rofi_command -p 'Theme Switcher' -dmenu -selected-row 0)
+
+lotus () {
+	sleep 0.5s
+	cd $HOME/.rice/lotus && cp -r * ~/.config/
+    cp -r $HOME/.rice/lotus/app.css /home/xor/Documents/Bento/
+    bspc wm -r
+}
+
+mono () {
+	sleep 0.5s
+	cd $HOME/.rice/Mono && cp -r * ~/.config/
+    cp -r $HOME/.rice/Mono/app.css /home/xor/Documents/Bento/
+    bspc wm -r
+}
+
+case "$chosen" in
+	"Lotus") lotus;;
+	"Mono") mono;;
+	*) exit 1 ;;
+esac
