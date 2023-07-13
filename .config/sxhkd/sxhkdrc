@@ -3,6 +3,9 @@
 ## Rofi App Launcher
 alt + space
 	sh ~/.config/bspwm/rofi/bin/launcher
+	
+alt + e
+	bash ~/.config/bspwm/rofi/bin/emojipick
 
 ## Rofi Screenshot Menu
 super + 0
