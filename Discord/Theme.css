@@ -20,7 +20,7 @@
     --accentcolor2: 90, 90, 90;
     --linkcolor: 90, 90, 90;
     --text-link: #868686;
-    --scrollbar-auto-thumb: #868686;
+    --scrollbar-auto-thumb: #868686;can 
     --brand-experiment: #868686;
     --status-danger: #868686;
 
@@ -1406,3 +1406,19 @@ div[data-list-item-id="guildsnav___842219447716151306"] .icon-3AqZ2e {
 div[data-list-item-id="guildsnav___635612648934735892"] .icon-3AqZ2e {
   content: url('https://media.discordapp.net/attachments/1128669686234615950/1128670340567011368/UnixpornIcon.png');
 }
+
+/* Nightzone Server */
+div[data-list-item-id="guildsnav___1047168527519453319"] .icon-3AqZ2e {
+  content: url('https://media.discordapp.net/attachments/1128669686234615950/1129212177614655568/IconNighty.png?width=652&height=652');
+}
+
+/* Hash Server */
+div[data-list-item-id="guildsnav___1121259394794000404"] .icon-3AqZ2e {
+  content: url('https://media.discordapp.net/attachments/1128669686234615950/1129844655790506075/image.png?width=623&height=616');
+}
+
+/* .contents-3NembX { */
+	/* background-color: #0e0e0e; */
+	/* border: none; */
+	/* color: #0e0e0e; */
+/* } */
