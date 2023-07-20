@@ -1391,9 +1391,13 @@ svg:hover path:hover {
     display: none;
   }
 
-.pill-2RsI5Q {
-	display: none;
-}
+.pill-2RsI5Q { 
+	display: none; 
+} 
+
+.divider-2dDziJ { 
+	display: none; 
+} 
 
 /* -------------------------- Server Icons -------------------------- */
 
@@ -1417,14 +1421,20 @@ div[data-list-item-id="guildsnav___1121259394794000404"] .icon-3AqZ2e {
   content: url('https://media.discordapp.net/attachments/1128669686234615950/1129844655790506075/image.png?width=623&height=616');
 }
 
+/* OwlSec Server */
+div[data-list-item-id="guildsnav___990435451334688768"] .icon-3AqZ2e {
+  content: url('https://media.discordapp.net/attachments/1128669686234615950/1130733030533758976/owlICon.png?width=652&height=652');
+}
 
-
+/* --------------------------------------- */
 
 /* Group Chat Private Channels */
 a[data-list-item-id*="private-channels-uid"][aria-label*="(group message)"] .avatar-31d8He {
   content: url('https://media.discordapp.net/attachments/1128669686234615950/1130132432063045743/New_Projectfwerf.png?width=652&height=652');
 }
+
 /* Group Chat Icon */
 div.wrapper-3kah-n[role="listitem"][data-list-item-id="guildsnav___1130119319955705948"] > img.icon-3AqZ2e {
   content: url('https://media.discordapp.net/attachments/1128669686234615950/1130132432063045743/New_Projectfwerf.png?width=652&height=652');
 }
+
